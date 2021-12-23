@@ -9,12 +9,12 @@ class Document extends Model
     protected $fillable = [
         'id',
         'type_id',
-        'name_arquive',
-
+        'title',
+        'name_archive'
     ];
 
     public function document_type()
     {
-        return $this->belongsTo(Document_type::class);
+        return $this->hasOne(Document_type::class, 'id', 'type_id');
     }
 }

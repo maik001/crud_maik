@@ -15,9 +15,9 @@ class CreateDocumentsTable extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Document_type::class);
+            $table->foreignId(column:'type_id')->constrained(table: 'document_types');
             $table->string('title');
-            $table->string('name_arquive');
+            $table->string('name_archive');
             $table->timestamps();
         });
     }

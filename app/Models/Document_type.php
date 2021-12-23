@@ -13,6 +13,6 @@ class Document_type extends Model
 
     protected function document()
     {
-        return $this->hasMany(Document::class);
+        return $this->belongsTo(Document::class, foreignKey:'type_id', ownerKey:'id');
     }
 }
